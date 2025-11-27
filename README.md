@@ -1,8 +1,8 @@
-# 🎸 Acoustic Night — Telegram Collaboration Bot
+# Acoustic Night — Telegram Collaboration Bot
 
 A Telegram bot that helps musicians create profiles, find collaborators, and connect after a mutual match.
 
-## ✨ Features
+## Features
 
 - **Create & Edit Profile**
   - Choose instruments you play from 10+ options
@@ -41,7 +41,7 @@ PORT=10000
 ```
 ## 🗄 Database
 Simple JSONB schema:
-```sq;
+```sql;
 CREATE TABLE IF NOT EXISTS users (
     user_id TEXT PRIMARY KEY,
     data JSONB NOT NULL
