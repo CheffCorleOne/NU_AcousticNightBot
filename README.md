@@ -23,7 +23,7 @@ A Telegram bot that helps musicians create profiles, find collaborators, and con
 - **PostgreSQL with JSONB**
 - **psycopg2**
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 git clone https://github.com/CheffCorleOne/NU_acousticnigtbot.git
@@ -38,27 +38,8 @@ Set environment variables:
 TELEGRAM_BOT_TOKEN=your_bot_token
 DATABASE_URL=postgresql://user:pass@host/db
 ```
-Alternatively, set this starting command file: 
-```bash
-#!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status
-set -e
-
-
-source venv/bin/activate
-echo "Installing dependencies..."
-pip install -r requirements.txt
-echo "Setting environment variables..."
-export TELEGRAM_BOT_TOKEN="TELEGRAM_BOT_TOKEN=your_bot_token"
-export DATABASE_URL="postgresql://user:pass@host/db" 
-echo "Running the application..."
-python3 main.py
-```
-
-
-
-## 🗄 Database
+## Database
 Simple JSONB schema:
 ```sql;
 CREATE TABLE IF NOT EXISTS users (
