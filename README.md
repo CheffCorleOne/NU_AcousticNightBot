@@ -37,8 +37,27 @@ Set environment variables:
 ```.env
 TELEGRAM_BOT_TOKEN=your_bot_token
 DATABASE_URL=postgresql://user:pass@host/db
-PORT=10000
 ```
+Alternatively, set this starting command file: 
+```bash
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+
+source venv/bin/activate
+echo "Installing dependencies..."
+pip install -r requirements.txt
+echo "Setting environment variables..."
+export TELEGRAM_BOT_TOKEN="TELEGRAM_BOT_TOKEN=your_bot_token"
+export DATABASE_URL="postgresql://user:pass@host/db" 
+echo "Running the application..."
+python3 main.py
+```
+
+
+
 ## 🗄 Database
 Simple JSONB schema:
 ```sql;
