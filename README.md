@@ -1,4 +1,4 @@
-# Acoustic Night — Telegram Collaboration Bot
+# Nazarbayev University Acoustic Night club  — Telegram Artists Collaboration Bot
 
 A Telegram bot that helps musicians create profiles, find collaborators, and connect after a mutual match.
 
