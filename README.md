@@ -1,113 +1,72 @@
-# 🎸 Acoustic Night --- Telegram Collaboration Bot
+🎸 Acoustic Night — Telegram Collaboration Bot
+A Telegram bot that helps musicians create profiles, find collaborators, and connect after a mutual match.
+Built with Python, python-telegram-bot, and PostgreSQL (JSONB).
 
-A Telegram bot that helps musicians create profiles, find collaborators,
-and connect after a mutual match.\
-Built with **Python**, **python-telegram-bot**, and **PostgreSQL
-(JSONB)**.
+✨ Features
+Create & Edit Profile
 
-## ✨ Features
+Choose instruments you play from 10+ options
 
--   **Create & edit a musician profile**
-    -   Choose instruments you play
-    -   Choose instruments you are seeking
-    -   Short bio (max 120 characters)
--   **Two search modes**
-    -   🎯 **Smart Matches** --- mutual instrument interest
-    -   🔀 **Browse All** --- swipe-style browsing
--   **Collaboration requests**
-    -   Send a "Let's Collab" request\
-    -   Other user gets **Accept / Decline**
-    -   Contact becomes visible **only** after mutual match
--   **Built-in Health Check Server** for hosting platforms.
+Specify instruments you're seeking
 
-## 🗂 Tech Stack
+Write a short bio (max 120 characters)
 
--   Python 3.10+
--   python-telegram-bot v20.6
--   PostgreSQL (JSONB)
--   psycopg2
+Smart Matching System
 
-## 🚀 Installation
+🎯 Smart Matches: Find users based on mutual instrument interests
 
-``` bash
+🔀 Browse All: Discover all musicians in swipe-style interface
+
+Secure Collaboration
+
+Send "Let's Collab" requests to other musicians
+
+Contact information revealed only after mutual match
+
+Real-time notification system for requests
+
+User Management
+
+View your profile and matches
+
+Track pending requests and connections
+
+Production Ready
+
+Built-in health check server for hosting platforms
+
+Error handling and logging
+
+🗂 Tech Stack
+Python 3.10+
+
+python-telegram-bot v20.6 - Modern Telegram Bot API framework
+
+PostgreSQL with JSONB - Flexible data storage
+
+psycopg2 - PostgreSQL adapter for Python
+
+Standard Library - threading, logging, http.server
+
+🚀 Installation & Setup
+bash
+# Clone repository
 git clone https://github.com/CheffCorleOne/NU_acousticnigtbot.git
 cd NU_acousticnigtbot
+
+# Create virtual environment
 python3 -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate  # Windows
+
+# Install dependencies
 pip install -r requirements.txt
-```
+🔧 Environment Configuration
+Create a .env file with:
 
-## 🔧 Environment Variables
-
-    TELEGRAM_BOT_TOKEN=123456:ABC...
-    DATABASE_URL=postgres://USER:PASSWORD@HOST:5432/DBNAME
-    PORT=10000
-
-## 🗄 Database (JSONB)
-
-``` sql
-CREATE TABLE IF NOT EXISTS users (
-    user_id TEXT PRIMARY KEY,
-    data JSONB NOT NULL
-);
-```
-
-Example profile:
-
-``` json
-{
-  "user_id": "123",
-  "name": "John",
-  "username": "john",
-  "instruments": ["guitarist"],
-  "seeking": ["vocalist"],
-  "bio": "Looking for vocalist",
-  "matches": [],
-  "pending": [],
-  "created_at": "2025-01-12T10:20:54"
-}
-```
-
-## ▶️ Running
-
-``` bash
-python main.py
-```
-
-## 🔄 systemd Service Example
-
-    [Unit]
-    Description=Acoustic Night Telegram Bot
-    After=network.target
-
-    [Service]
-    User=ubuntu
-    WorkingDirectory=/home/ubuntu/YOUR_REPO
-    Environment="TELEGRAM_BOT_TOKEN=YOUR_TOKEN"
-    Environment="DATABASE_URL=postgres://USER:PASS@HOST/DB"
-    ExecStart=/home/ubuntu/YOUR_REPO/venv/bin/python main.py
-    Restart=always
-
-    [Install]
-    WantedBy=multi-user.target
-
-## 🐳 Dockerfile
-
-    FROM python:3.11-slim
-    WORKDIR /app
-    COPY . .
-    RUN pip install --upgrade pip && pip install -r requirements.txt
-    ENV PORT=10000
-    CMD ["python", "main.py"]
-
-## ✔ Testing Steps
-
-1.  Run bot locally.
-2.  Open Telegram and send `/start`.
-3.  Create profile.
-4.  Use second account to test matching.
-5.  Verify Accept/Decline flow.
-
-## 📜 License
-
-MIT License.
+env
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+DATABASE_URL=postgresql://user:password@host:5432/database_name
+PORT=10000
+🗄 Database Schema
+The bot uses a simple yet powerful PostgreSQL schema with JSONB
